@@ -11,7 +11,7 @@ Test this function by hand in the console to get it working, and when you think 
 For TODO item, be sure to change it to say DONE when you have successfully completed the task*/
 
 // TODO: Write your code here
-function sum(a, b){ //eslint-disable-line
+function sum(a, b) { //eslint-disable-line
   var theSum = a + b;
   var message = 'The sum of ' + a + ' and ' + b + ' is ' + theSum + '.';
   return [theSum, message];
@@ -31,7 +31,7 @@ Write a function called multiply() that takes in two numbers as arguments and re
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testMultiply() function and see if the test passes.*/
 
 // TODO: Write your code here
-function multiply(a, b){ //eslint-disable-line
+function multiply(a, b) { //eslint-disable-line
   var multipleSum = a * b;
   var message = 'The product of ' + a + ' and ' + b + ' is ' + multipleSum + '.';
 
@@ -56,13 +56,13 @@ IMPORTANT DETAIL: You may not use the arithmetic operators + and * in this funct
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testSumAndMultiply() function and see if the test passes.*/
 
 // TODO: Write your code here
-function sumAndMultiply(a,b,c){ //eslint-disable-line
+function sumAndMultiply(a,b,c) { //eslint-disable-line
   var addSum = a + b + c;
   var timesSum = a * b * c;
   var addText = a + ' and ' + b + ' and ' + c + ' sum to ' + addSum + '.';
-  var timesTest = 'The product of ' + a + ' and ' + b + ' and ' + c + ' is ' + timesSum + '.';
+  var timesText = 'The product of ' + a + ' and ' + b + ' and ' + c + ' is ' + timesSum + '.';
 
-  return [addSum, timesSum, addText, timesTest];
+  return [addSum, timesSum, addText, timesText];
 }
 
 // TODO: Here is the test for sumAndMultiply(); uncomment it to run it
@@ -83,12 +83,16 @@ Test this function by hand in the console to get it working, and when you think 
 // TODO: Write your code here
 var testArray = [2,3,4]; //eslint-disable-line
 
-function sumArray(testArray){ //eslint-disable-line
-
+function sumArray(testArray) { //eslint-disable-line
+  var arraySum = 0;
+  for (var i = 0; i < testArray.length; i ++) {
+    arraySum = arraySum + testArray[i];
+  }
+  return [arraySum, testArray.join() + ' was passed in as an array of numbers, and ' + arraySum + ' is their sum.'];
 }
 
 // TODO: Here is the test for sumArray(); uncomment it to run it
-// testSumArray(testArray);
+testSumArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
