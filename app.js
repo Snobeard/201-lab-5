@@ -15,7 +15,7 @@ function sum(a, b) { //eslint-disable-line
 
   var theSum = a + b;
   var message = 'The sum of ' + a + ' and ' + b + ' is ' + theSum + '.';
-  
+
   return [theSum, message];
 }
 
@@ -60,8 +60,8 @@ Test this function by hand in the console to get it working, and when you think 
 // TODO: Write your code here
 function sumAndMultiply(a,b,c) { //eslint-disable-line
 
-  var addSum = a + b + c;
-  var timesSum = a * b * c;
+  var addSum = sum(sum(a, b)[0], c)[0];
+  var timesSum = multiply(multiply(a, b)[0], c)[0];
   var addText = a + ' and ' + b + ' and ' + c + ' sum to ' + addSum + '.';
   var timesText = 'The product of ' + a + ' and ' + b + ' and ' + c + ' is ' + timesSum + '.';
 
@@ -87,11 +87,7 @@ Test this function by hand in the console to get it working, and when you think 
 var testArray = [2,3,4]; //eslint-disable-line
 
 function sumArray(testArray) { //eslint-disable-line
-  var arraySum = 0;
-
-  for (var i = 0; i < testArray.length; i ++) {
-    arraySum += testArray[i];
-  }
+  var arraySum = sum(sum(testArray[0], testArray[1])[0], testArray[2])[0];
 
   var sumText = testArray.join() + ' was passed in as an array of numbers, and ' + arraySum + ' is their sum.';
   return [arraySum, sumText];
@@ -114,11 +110,9 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function multiplyArray(testArray){ //eslint-disable-line
-  var arrayProduct = testArray[0];
+  var arrayProduct = multiply(multiply(testArray[0], testArray[1])[0], testArray[2])[0];
 
-  for (var i = 1; i < testArray.length; i ++) {
-    arrayProduct *= testArray[i];
-  }
+
 
   var productText = 'The numbers ' + testArray.join() + ' have a product of ' + arrayProduct + '.';
   return [arrayProduct, productText];
